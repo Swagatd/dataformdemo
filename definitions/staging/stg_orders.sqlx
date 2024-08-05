@@ -1,0 +1,27 @@
+config {
+  type: "view",
+  schema: "staging",
+  description: "Cleaned up data corresponding to New York City",
+  // column level documentation, defined in includes/docs.js
+  // columns: docs.nyc_weather
+}
+
+SELECT
+	-- IDs
+	order_id,
+	user_id,
+
+	-- Timestamps
+	created_at,
+	returned_at,
+	delivered_at,
+	shipped_at,
+
+	-- Other columns
+	status,
+	num_of_item AS num_items_ordered
+
+	{#- Unused columns:
+		- gender
+	#}
+FROM ${ref("orders")}
