@@ -11,9 +11,9 @@ SELECT
 	id AS product_id,
 
 	-- Other columns
-	cost,
-	retail_price,
-	department,
+	cost as product_cost,
+	retail_price as product_retail_price,
+	department as product_department,
 	brand -- new column added in v2
 
 	{#- Unused columns:
